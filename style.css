@@ -1,0 +1,122 @@
+/* Resetowanie stylów */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Podstawowe style dla całej strony */
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  text-align: center;
+}
+
+.tile {
+    width: 150px;
+    height: 75px;
+    background-color: #ccc;
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    line-height: 75px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tile:hover {
+    background-color: #999;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Media queries dla responsywności */
+@media (min-width: 640px) {
+  .tile ,.tile:hover {
+    display: inline-flexbox;
+    margin: 10px 10px;
+  }
+}
+
+
+/* Styl dla kolumn */
+.column {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px; /* Dodatkowy margines między kolumnami */
+}
+
+/* Styl dla bloków */
+.block {
+    width: auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Bloki będą się równomiernie rozciągać, aby wypełnić dostępną przestrzeń */
+    transition: background-color 0.3s, transform 0.3s; /* Dodanie płynnych przejść */
+
+
+}
+
+/* Efekt na najechanie */
+.block:hover {
+    background-color: #d9d9d9; /* Zmiana koloru tła po najechaniu */
+    transform: translateY(-5px); /* Przesunięcie bloku w górę po najechaniu */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Dodanie większego cienia po najechaniu */
+}
+
+.block img {
+    width: auto; /* Ustawienie szerokości na auto */
+    height: 150px; /* Stała wysokość obrazka */
+    object-fit: cover; /* Wypełnienie kontenera przez obraz przy zachowaniu proporcji */
+    border-radius: 5px;
+}
+
+.block p {
+    margin-top: auto;
+    font-size: 14px;
+    color: #666;
+    line-height: normal;
+}
+
+/* Media queries dla responsywności */
+@media (max-width: 480px) {
+    main {
+        flex-direction: row; /* Zmiana na układ w jednym rzędzie na urządzeniach o szerokości do 768px */
+        justify-content: center; /* Wyśrodkowanie bloków na urządzeniach mobilnych */
+    }
+    .block, .block p {
+        width: calc(50% - 20px); /* Po zmianie na ekranie o szerokości do 768px, bloki będą zajmować 50% szerokości */
+        margin-right: 0; /* Usunięcie marginesu z prawej strony */
+    }
+}
